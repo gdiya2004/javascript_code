@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>closure</title>
+</head>
+<body>
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+
+</body>
+    <script>
+
+        /////////////////////////lexical scoping
+// function init() {
+//     let name = "Mozilla"; 
+//     function displayName() {
+//     // displayName() is the inner function, that forms the closure
+//         console.log(name);
+//         }
+//     displayName();
+// }
+// init();
+
+// function outer(){
+//     let username="hitesh";
+//     function inner(){
+//         let secret="diya"
+//         console.log("inner",username)
+//     }
+//     function inner2(){
+//         console.log("inner",username)
+//         console.log(secret)
+//     }
+//     inner();
+//     inner2();
+// }
+// outer();
+// console.log("outer",username)
+          
+/////////////////////////////////////////////closure
+// function makeFunc() {
+//   const name = "Mozilla";
+//   function displayName() {
+//     console.log(name);
+//   }
+//   return displayName;//function ka reference diya tha  + function toh yahan khatam ho gay tha
+//   //sirf displayName nhi jaayega but agr uska outer function exists krta hai toh vo bhi jaayega
+//   //saara ka saara lexical scope jaa rha hai
+// }
+// const myFunc = makeFunc();
+// myFunc();
+
+
+//Practical implementation:::
+    </script>
+    <script>
+// document.querySelector('#orange').addEventListener('click',()=>{
+    // document.querySelector('body').style.backgroundColor="orange";
+// })
+// document.querySelector('#green').addEventListener('click',()=>{
+//     document.querySelector('body').style.backgroundColor="green";
+// })
+
+/////////////////////////////////better way to do above one
+
+// function clickhandler(color){
+//     document.querySelector('body').style.backgroundColor=`${color}`;
+// }
+// document.getElementById('orange').addEventListener('click',clickhandler("orange"));
+ 
+///////////////////////////////////or//////////////////
+// function clickhandler(color){
+//     document.querySelector('body').style.backgroundColor = color;
+// }
+
+// document.getElementById('orange').onclick = function() {
+//     clickhandler("orange");
+// };
+
+///////////////////////////////best way
+
+// function clickhandler(color){
+//     // document.querySelector('body').style.backgroundColor=`${color}`;
+//     return function(){
+//         document.querySelector('body').style.backgroundColor=`${color}`;
+//     }
+// }
+// document.getElementById('orange').onclick=clickhandler("orange");
+
+    </script>
+</html>

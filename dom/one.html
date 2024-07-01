@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Learning</title>
+    <style>
+        .bg-black{
+            background-color: #000000;
+            color:#ffffff;
+        }
+    </style>
+</head>
+<body style="background-color:#212121;color:#ffffff;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day" >Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+   const parent= document.querySelector('.parent')
+
+//parent-->children
+//children is HTML collection
+
+// console.log(parent);
+// console.log(parent.children);//HTML collection
+// console.log(parent.children[1].innerHTML);
+
+// for (let i=0;i<parent.children.length;i++){
+//     console.log(parent.children[i].innerHTML);
+// }
+// parent.children[1].style.color="orange"
+// console.log(parent.firstElementChild);
+// console.log(parent.lastElementChild);
+
+//children-->parent
+// const dayOne=document.querySelector('.day');
+//  console.log(dayOne);
+// console.log(dayOne.parentElement);
+// console.log(dayOne.nextElementSibling);
+
+//nodes
+//enter is taken as text once if continuosly.
+//comment is taken as comment
+
+// console.log("NODES:",parent.childNodes)
+</script>
+</html>

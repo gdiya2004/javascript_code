@@ -1,0 +1,83 @@
+<!-- //api is talking language between two systems
+//can be backend / frontend or anything 
+//console.log is debugging tool not part of defaut js. debugger tool of browser -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card{
+            width:30vw;
+            height:70vh;
+            border:1px solid black;
+            display:flex;
+            flex-direction:column;
+        }
+    </style>
+</head>
+<body>
+<!-- Value	State	           Description
+0	    UNSENT	               Client has been created. open() not called yet.
+1	    OPENED	              open() has been called.
+2	    HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	    LOADING	              Downloading; responseText holds partial data.
+4	    DONE
+	             The operation is complete. -->
+                <div class="button"><button>Click here</button></div>
+                 <div class="card_to"></div>
+</body>
+<script>
+
+// By using a callback function, we handle the asynchronous nature of XHR requests properly. This ensures 
+// that the DOM is updated only after the data has been fetched and processed successfully from the GitHub API endpoint.
+
+function work(callback) {
+    const reqURL = 'https://api.github.com/users/gdiya2004';
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', reqURL);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 ) {
+            const data = JSON.parse(this.responseText);
+            const followers = data.followers;
+            const img=data.avatar_url;
+            callback({img,followers}); // Pass followers to the callback function
+        }
+    }
+    xhr.send(); // Send the request
+}
+
+document.querySelector('.button').addEventListener('click', function () {
+    const card = document.querySelector(".card_to");
+    // Call work function with a callback to handle followers data
+    work(function ({img,followers}) {
+        card.innerHTML = `<div class="card">
+            <div class="img"><img src="${img}"></div>
+            <div class="followers">${followers}</div>
+        </div>`;
+    });
+});
+
+    // const reqURL='https://api.github.com/users/gdiya2004'
+    // const xhr = new XMLHttpRequest()
+    // xhr.open('GET',reqURL);
+    // xhr.onreadystatechange=function(){
+    // console.log(xhr.readyState);
+    // if(xhr.readyState===4){
+        // const data=this.responseText;
+        // console.log(typeof(data));//string
+        // console.log(data.followers);//undefined
+
+        //url se response most of time string hi aata hai not as object
+        //string ko JSON mein convert krna padega
+        // const data=JSON.parse(this.responseText);
+        // console.log(data);
+        // console.log(typeof(data)); //object
+        // console.log(data.followers);
+        // }
+    // }
+    // xhr.send();
+</script>
+</html>

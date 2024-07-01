@@ -1,5 +1,7 @@
 // //node -v
 // //node file.js
+
+
 // console.log("Diya")
 // const accountId=23124032 //to declare a constant, const keyword,value cannot be changed
 // let accountEmail="192004gupta@gmail.com" //to declare a variable,memory mein space is assigsned 
@@ -11,6 +13,8 @@
 // accountCity="Hoshiarpur"
 // accountId=2
 // console.log(accountId);//TypeError if const keyword ki value is changed
+console.log(parseInt('4aa'))
+console.log(parseFloat('4aa'))
 
 // console.table([accountEmail,accountId,accountPassword,accountCity])
 

@@ -1,0 +1,87 @@
+<!-- # the string "click", to indicate that we want to listen to the click event. Buttons can fire lots of other events, such as "mouseover" when the user moves their mouse over the button, or "keydown" when the user presses a key and the button is focused.
+
+# focus and blur — The color changes when the button is focused and unfocused; try pressing the tab to focus on the button and press the tab again to focus away from the button. These are often used to display information about filling in form fields when they are focused, or to display an error message if a form field is filled with an incorrect value.
+
+# dblclick — The color changes only when the button is double-clicked.
+
+# mouseover and mouseout — The color changes when the mouse pointer hovers over the button, or when the pointer moves off the button, respectively.
+
+# If you've added an event handler using addEventListener(), you can remove it again using the removeEventListener() method.
+
+# const controller = new AbortController();  
+AbortController is a built-in JavaScript object that allows you to abort DOM requests, timers, or any other ongoing operations.
+If somewhere in your code you call controller.abort(), it will send an abort signal (controller.signal).
+When an abort signal is sent, any event listener that was set up with { signal: controller.signal } as third parameter will stop executing. In this case, if the button btn is clicked after an abort signal is sent, the event listener attached to it won't execute the callback function that changes the background color. -->
+
+<!-- The timeStamp read-only property of the Event interface returns the time (in milliseconds) at which the event was created. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <section class="event-type">
+    <p>Press any key or click the mouse to get the event type.</p>
+<p id="log"></p>
+</section> -->
+
+<!-- <section class="timestamp">
+    <p>
+        Focus this iframe and press any key to get the current timestamp for the
+        keypress event.
+      </p>
+      <p>timeStamp: <span id="time">-</span></p>
+</section> -->
+
+<section class="target_and_currentTarget">
+    <div id="parent">
+        Click parent
+        <div id="child">Click child</div>
+      </div>
+      
+      <button id="reset">Reset</button>
+      <pre id="output"></pre>
+</section>
+</body>
+<script>
+
+// event.type
+//     function getEventType(event) {
+//   const log = document.getElementById("log");
+//   log.innerText = `${event.type}\n${log.innerText}`;
+// }
+// document.addEventListener("keydown", getEventType, false); // first
+// document.addEventListener("keypress", getEventType, false); // second
+// document.addEventListener("keyup", getEventType, false); // third
+// document.addEventListener("mousedown", getEventType, false); // first
+// document.addEventListener("mouseup", getEventType, false); // second
+// document.addEventListener("click", getEventType, false); // third
+
+//event.timeStamp
+// function getTime(event) {
+//   const time = document.getElementById("time");
+//   time.textContent= event.timeStamp;
+// }
+// document.body.addEventListener("keypress", getTime);
+
+
+// target property of the Event interface is a reference to the object onto which the event was dispatched.
+// const output = document.querySelector("#output");
+// const parent = document.querySelector("#parent");
+// parent.addEventListener("click", (event) => {
+//   const currentTarget = event.currentTarget.getAttribute("id");
+//   const target = event.target.getAttribute("id");
+//   output.textContent = `Current target: ${currentTarget}\n`;
+//   output.textContent += `Target: ${target}`;
+// });
+
+// const reset = document.querySelector("#reset");
+// reset.addEventListener("click", () => document.location.reload());
+
+// event.relatedTarget-It is used to refer to the element from which the mouse pointer moved away (in mouseout events) or to which the focus is moving . 
+
+</script>
+</html>

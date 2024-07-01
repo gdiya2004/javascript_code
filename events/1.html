@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2> amazing images</h2>
+<div>
+    <ul id="images">
+        <li><img src="https://www.google.com/search?q=images&sca_esv=5f60c0af12b43c79&sca_upv=1&rlz=1C1CHBD_en-GBIN1115IN1115&udm=2&source=iu&ictx=1&vet=1&fir=tYmxDgFq4MrkJM%252C-t22bY2ix3gHaM%252C%252Fm%252F0jg24%253BsKMM4eBjWSQEBM%252CB51x0PBR9KNzvM%252C_%253BkLMvIwVUZfbeMM%252CLHNlCfmH1SFk3M%252C_%253BivTDs79HInLVcM%252CU9G_8UXPMlqatM%252C_%253BTYKp6NN-TlN4RM%252CHOOef33nbgyQdM%252C_%253B2bDbkWU2YfoH7M%252CjcfJekXmSUdJHM%252C_&usg=AI4_-kRmC-wsXn-G-GopoUth9mbo9m4X5g&sa=X&ved=2ahUKEwjzk7LCnvmGAxWogFYBHRIoD3sQ_B16BAguEAE#vhid=tYmxDgFq4MrkJM&vssid=mosaic" width="200px" id="photoshop1" alt="photoshop"></li>
+        <!-- <li><img src="C:\Users\Lenovo\Desktop\web_gallery\pics\image.png" width="200px" id="photoshop2" onclick="alert('owl')" alt="photoshop"></li> -->
+        <li><img src="https://www.google.com/search?q=images&sca_esv=5f60c0af12b43c79&sca_upv=1&rlz=1C1CHBD_en-GBIN1115IN1115&udm=2&source=iu&ictx=1&vet=1&fir=tYmxDgFq4MrkJM%252C-t22bY2ix3gHaM%252C%252Fm%252F0jg24%253BsKMM4eBjWSQEBM%252CB51x0PBR9KNzvM%252C_%253BkLMvIwVUZfbeMM%252CLHNlCfmH1SFk3M%252C_%253BivTDs79HInLVcM%252CU9G_8UXPMlqatM%252C_%253BTYKp6NN-TlN4RM%252CHOOef33nbgyQdM%252C_%253B2bDbkWU2YfoH7M%252CjcfJekXmSUdJHM%252C_&usg=AI4_-kRmC-wsXn-G-GopoUth9mbo9m4X5g&sa=X&ved=2ahUKEwjzk7LCnvmGAxWogFYBHRIoD3sQ_B16BAguEAE#vhid=tYmxDgFq4MrkJM&vssid=mosaic" width="200px" id="photoshop1" alt="photoshop"></li>
+        <li><img src="https://www.google.com/search?q=images&sca_esv=5f60c0af12b43c79&sca_upv=1&rlz=1C1CHBD_en-GBIN1115IN1115&udm=2&source=iu&ictx=1&vet=1&fir=tYmxDgFq4MrkJM%252C-t22bY2ix3gHaM%252C%252Fm%252F0jg24%253BsKMM4eBjWSQEBM%252CB51x0PBR9KNzvM%252C_%253BkLMvIwVUZfbeMM%252CLHNlCfmH1SFk3M%252C_%253BivTDs79HInLVcM%252CU9G_8UXPMlqatM%252C_%253BTYKp6NN-TlN4RM%252CHOOef33nbgyQdM%252C_%253B2bDbkWU2YfoH7M%252CjcfJekXmSUdJHM%252C_&usg=AI4_-kRmC-wsXn-G-GopoUth9mbo9m4X5g&sa=X&ved=2ahUKEwjzk7LCnvmGAxWogFYBHRIoD3sQ_B16BAguEAE#vhid=tYmxDgFq4MrkJM&vssid=mosaic" width="200px" id="photoshop1" alt="photoshop"></li>
+        <li><a href="https://google.com" id="google">Google</a></li>
+    </ul>
+</div>
+<script>
+    
+//Javascript is sequential run language jyada trr events seq mein chalte i.e. synchronous;
+//attachEvent()
+//jQuery - on 
+//default js ka engine synchronous hai
+//api's and setInterval setTimeout makes it asynchronous
+//gives less features
+// document.getElementById('photoshop2').onclick=function(){
+//     alert("owl clicked");
+// }
+
+//best approach: has 3 parameters and third parameter has default false
+//type,timestamp,defaultPrevented
+//target,relatedTarget,currentTarget
+
+//clientX, clientY, screenX,screenY
+//altkey, ctrlkey,shiftkey,keyCode
+
+// document.getElementById('photoshop2').addEventListener('click',function(e){
+//   console.log(e);
+// },false)
+
+//event Propagation:
+//2 context: 1.event bubbling 2.event capturing
+//event bubbling -->false
+//event bubbling-->niche se uppr jana just like bubble;
+
+// document.getElementById('images').addEventListener('click',function(e){
+//   console.log("clicked inside the ul");
+// },false)
+
+// document.getElementById('photoshop2').addEventListener('click',function(e){
+//   console.log("clicked something");
+// },false)
+
+//event capturing-->true;
+//capturing:bahr se andr jaata hai.
+
+// document.getElementById('images').addEventListener('click',function(e){
+//   console.log("clicked inside the ul");
+// },true)
+
+// document.getElementById('photoshop2').addEventListener('click',function(e){
+//   console.log("clicked something");
+// },true)
+
+//sometimes we want no bubbling inner element alag rhe:
+
+// document.getElementById('images').addEventListener('click',function(e){
+//   console.log("clicked inside the ul");
+// },false)
+
+// document.getElementById('photoshop2').addEventListener('click',function(e){
+//   console.log("clicked something");
+//   e.stopPropagation();
+// },false)
+
+// document.getElementById('google').addEventListener('click',function(e){
+//     e.preventDefault();
+//     e.stopPropagation();
+// console.log("google clicked");
+// },false)
+
+// document.querySelector('#images').addEventListener('click',function(e){
+//     e.preventDefault();
+//     console.log(e);
+//     console.log(e.target);
+//     console.log(e.target.parentNode);
+//     console.log(e.target.tagName);
+//     if(e.target.tagName=='IMG'){
+//         console.log(e.target.id);
+//         let removeIt=e.target.parentNode;
+//         removeIt.remove();
+//     }
+    // removeIt.parentNode.removeChild(removeIt);
+// },false)
+</script>
+</body>
+</html>

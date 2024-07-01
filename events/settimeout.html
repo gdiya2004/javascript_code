@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Diya</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+//method calls api (call back func,time in mili sec)--> itne time ke baad vo kaam hoga ek baar
+//     setTimeout(function(){
+//         console.log("diya")
+//     },2000)
+
+// const sayDiya=function(){
+//     console.log("diya");
+// }
+// setTimeout(sayDiya,200);//give reference of function
+
+const appendtext=function(){
+    document.querySelector('h1').appendChild(document.createTextNode('Moti'));
+}
+const changeme = setTimeout(appendtext,2000);
+
+document.querySelector('#stop').addEventListener('click',function(){
+    clearTimeout(changeme);
+    console.log('stop');
+})
+</script>
+</html>

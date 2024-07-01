@@ -1,4 +1,4 @@
-c//singleton :type of object constructor se singleton banta hai.
+//singleton :type of object constructor se singleton banta hai.
 
 //ways to declare objects:
 // object literal
@@ -6,6 +6,7 @@ c//singleton :type of object constructor se singleton banta hai.
 
 //object literal:
 //key is auto stored as string
+
 
 // const mySym=Symbol("key1")
 // const JsUser={
@@ -77,11 +78,11 @@ c//singleton :type of object constructor se singleton banta hai.
 
 // const obj1={
 //     1:"a",
-//     2:"b"
+//     2:"b",
 // }
 // const obj2={
 //     3:"a",
-//     4:"b"
+//     4:"b",
 // }
 // const obj3={obj1,obj2}
 // console.log(obj3)
