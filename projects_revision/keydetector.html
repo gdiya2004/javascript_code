@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,th,tr{
+            border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Press the key and watch the magic!!</h1>
+    <div class="table"></div>
+</body>
+<script>
+const insert_=document.querySelector('.table')
+    window.addEventListener('keydown',function(e){
+        insert_.innerHTML=`
+        <table>
+            <tr>
+            <th>key</th>
+            <th>keycode</th>
+            <th>code</th>
+            </tr>
+            <tr>
+            <th>${e.key===' '? 'space':e.key}</th>
+            <th>${e.keyCode}</th>
+            <th>${e.code}</th>
+            </tr>
+            </table>`
+    })
+</script>
+</html>

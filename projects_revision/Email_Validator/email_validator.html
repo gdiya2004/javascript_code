@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Validator</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+input {
+    padding: 10px;
+    margin: 10px 0;
+    width: 250px;
+}
+
+button {
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 18px;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Email Validator</h1>
+        <form id="emailForm">
+            <input type="text" id="emailInput" placeholder="Enter your email" required>
+            <button type="submit">Validate Email</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script>
+        const form=document.querySelector('#emailForm')
+        const result=document.querySelector('#result')
+        form.addEventListener('submit',function(e){
+            e.preventDefault();
+            const userInput=document.querySelector('#emailInput').value;
+            const emailPattern = /^[^\s@]+@+[^\s@]+\.+[^\s@]+$/;
+            if(emailPattern.test(userInput)){
+                result.textContent='valid email Address';
+                result.style.color='green'
+            }
+            else{
+                result.textContent='Invalid email address,Pls try again'
+                result.style.color='red';
+            }
+        })
+    </script>
+</body>
+</html>
+    <!-- regex pattern 
+    emailPattern.test(userInput)
+    const  emailPattern=/^[^@\s]+@+[^@\s]+\.+[^\s@]+$/-->
+

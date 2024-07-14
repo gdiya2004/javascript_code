@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display:flex;
+            justify-content:center;
+            align-items: center;
+        }
+        #time{
+            width:13vw;
+            height:5vh;
+            border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="clock"> <h1>Local Time</h1>
+        <div id="time"></div>
+    </div>
+</body>
+<script>
+    const local_time=document.querySelector('#time');
+    setInterval(function(){
+        let date=new Date();
+        local_time.innerHTML=date.toLocaleString();
+    },1000)
+</script>
+</html>

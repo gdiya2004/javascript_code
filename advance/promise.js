@@ -1,4 +1,4 @@
-// <!-- Promise object represents the eventual completion or failure of an async operation and its reulting value -->
+// <!-- Promise object represents the eventual completion or failure of an async operation and its resulting value -->
 
 //creation of promise
 //promise ke  andr callback aata hai
@@ -60,7 +60,7 @@
 // }).finally(()=>console.log("The promise is either resolved or rejected"))
 
 
-// promise5=new Promise(function(resolve,reject){
+// const promise5=new Promise(function(resolve,reject){
 //     setTimeout(function(){
 //         let error=true;
 //         if(!error){
@@ -79,7 +79,7 @@
 // }
 // consumepromise5();
 
-//try catch use krna padega in async for errors
+// try catch use krna padega in async for errors
 // async function consumepromise5(){
 //     try{
 //     const response=await promise5;
@@ -116,3 +116,6 @@
 // })
 // .then((data)=>console.log(data))
 // .catch((error)=>console.log("error"))
+
+// api--> application programming interface
+// An API key is a unique identifier used to authenticate requests made to an API

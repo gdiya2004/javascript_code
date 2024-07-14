@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #boxes{
+            display:flex;
+            flex-direction:row;
+            border:1px solid black;
+        }
+        .box{
+            width:30vw;
+            height:30vh;
+            border:1px solid black;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="main_body">
+        <h1>Color Switcher</h1>
+        <div id="boxes">
+            <div class="box" id="aqua" style="background-color: aqua;"></div>
+            <div class="box" id="green" style="background-color:green;"></div>
+            <div class="box" id="purple" style="background-color: purple;"></div>
+            <div class="box" id="blue" style="background-color: blue;"></div>
+        </div>
+    </div>
+</body>
+<script>
+    const body=document.querySelector('body');
+    const boxes=document.querySelectorAll('.box')
+boxes.forEach(function(box){
+    box.addEventListener('click',function(e){
+        if(e.target.id==='aqua') body.style.backgroundColor=e.target.id;
+        if(e.target.id==='green') body.style.backgroundColor=e.target.id;
+        if(e.target.id==='purple') body.style.backgroundColor=e.target.id;
+        if(e.target.id==='blue') body.style.backgroundColor=e.target.id;
+    })
+})
+    
+</script>
+</html>

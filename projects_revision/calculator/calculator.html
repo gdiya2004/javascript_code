@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .text-center{
+            text-align:center;
+        }
+        .container{
+            width:fit-content;
+            height:auto;
+            display:flex;
+            flex-direction:column;
+            margin:auto;
+        }
+        .input{
+            width:100%;
+            height: 5vh;
+            border:2px solid black;
+            border-radius:5px;
+            margin-bottom:9px;
+            font-size:15px;
+        }
+        .row{
+            display:flex;
+        }
+        .button{
+            width:5vw;
+            padding:20px;
+            height:10vh;
+            border:2px solid black;
+            cursor:pointer;
+            border-radius:9px;
+            margin:5px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="text-center">Calculator using HTML, CSS and JS</h1>
+    <div class="container bg-red mx-auto">
+        <div class="row">
+            <input type="text" class="input"  />
+        </div> <div class="row">
+            <button class="button">C</button>
+            <button class="button">%</button>
+            <button class="button">^</button>
+            <button class="button">**</button>
+        </div>
+        <div class="row">
+            <button class="button">7</button>
+            <button class="button">8</button>
+            <button class="button">9</button>
+            <button class="button">*</button>
+        </div>
+        <div class="row">
+            <button class="button">4</button>
+            <button class="button">5</button>
+            <button class="button">6</button>
+            <button class="button">/</button>
+        </div>
+        <div class="row">
+            <button class="button">1</button>
+            <button class="button">2</button>
+            <button class="button">3</button>
+            <button class="button">+</button>
+        </div>
+        <div class="row">
+            <button class="button">0</button>
+            <button class="button">.</button>
+            <button class="button">=</button>
+            <button class="button">%</button>
+        </div>
+    </div>
+    <script>
+let buttons=document.querySelectorAll('.button');
+let userInput="";
+let input_place=document.querySelector('.input');
+buttons.forEach((button)=>{
+    button.addEventListener('click',function(e){
+        if(e.target.innerHTML==='='){
+            userInput=eval(userInput);
+        }
+        else if(e.target.innerHTML==="C"){
+            userInput="";
+        }
+        else if(e.target.innerHTML==="%"){
+            userInput+="/100"
+            userInput=eval(userInput);
+        }
+        else
+        {
+        userInput+=e.target.innerHTML;
+        }
+    input_place.value=userInput; 
+    })
+})
+
+   </script>
+</body>
+</html>

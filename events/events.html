@@ -69,14 +69,14 @@ When an abort signal is sent, any event listener that was set up with { signal: 
 
 
 // target property of the Event interface is a reference to the object onto which the event was dispatched.
-// const output = document.querySelector("#output");
-// const parent = document.querySelector("#parent");
-// parent.addEventListener("click", (event) => {
-//   const currentTarget = event.currentTarget.getAttribute("id");
-//   const target = event.target.getAttribute("id");
-//   output.textContent = `Current target: ${currentTarget}\n`;
-//   output.textContent += `Target: ${target}`;
-// });
+const output = document.querySelector("#output");
+const parent = document.querySelector("#parent");
+parent.addEventListener("click", (event) => {
+  const currentTarget = event.currentTarget.getAttribute("id");
+  const target = event.target.getAttribute("id");
+  output.textContent = `Current target: ${currentTarget}\n`;
+  output.textContent += `Target: ${target}`;
+});
 
 // const reset = document.querySelector("#reset");
 // reset.addEventListener("click", () => document.location.reload());
